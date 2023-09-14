@@ -22,10 +22,10 @@ export default function TextForm(props) {
         alert('Text copied!')
     }
 
-    const handleRemoveExtraSpace = () => {
-        let newText = text.split(`/[]+ /s`)
-        setText(newText.join(''))
-    }
+    // const handleRemoveExtraSpace = () => {
+    //     let newText = text.split(`/[]+ /s`)
+    //     setText(newText.join(''))
+    // }
 
     const handleOnChange = (event) => {
         setText(event.target.value)
@@ -33,7 +33,7 @@ export default function TextForm(props) {
     const [text, setText] = useState('')
     return (
         <>
-            <h1>{props.heading}</h1>
+            <h1 className='responsive-heading'>{props.heading}</h1>
             <div className="box">
                 <textarea className='text-area' value={text} onChange={handleOnChange} placeholder='Enter text here' id='textarea'>
                 </textarea>
@@ -42,7 +42,7 @@ export default function TextForm(props) {
                     <button onClick={handleUpperCase}>Uppercase</button>
                     <button onClick={handleLowerCase}>Lowercase</button>
                     <button onClick={handleCopyText}>Copy Text</button>
-                    <button onClick={handleRemoveExtraSpace}>Remove Extra Space</button>
+                    {/* <button onClick={handleRemoveExtraSpace}>Remove Extra Space</button> */}
                 </div>
             </div>
 
